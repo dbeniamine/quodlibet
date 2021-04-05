@@ -220,4 +220,4 @@ jobs:
 
     - name: Run tests
       run: |
-        dbus-daemon & PYTEST_ADDOPTS=-rxXs python3 setup.py test
+        dbus-daemon & LANG=en_US PYTEST_ADDOPTS=-rxXs python3 setup.py test

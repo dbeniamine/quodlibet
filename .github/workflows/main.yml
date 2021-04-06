@@ -12,6 +12,15 @@ jobs:
       - name: Run tests in Docker container
         uses: ./.github/workflows/fedora33
 
+  debian:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run tests in Docker container
+        uses: ./.github/workflows/debian11
+
   msys2:
     runs-on: windows-latest
     steps:

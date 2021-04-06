@@ -2,6 +2,7 @@ FROM debian:buster
 
 RUN apt-get update && apt-get install -y \
         appstream-util \
+        build-essential \
         dbus-x11 \
         gettext \
         gir1.2-gst-plugins-base-1.0 \
@@ -16,24 +17,16 @@ RUN apt-get update && apt-get install -y \
         gstreamer1.0-plugins-good \
         gstreamer1.0-plugins-ugly \
         gstreamer1.0-pulseaudio \
+        libcairo2-dev \
+        libdbus-1-dev \
+        libgirepository1.0-dev \
+        librsvg2-2 \
         libxine2 \
-        python3-feedparser \
-        python3-gi \
-        python3-gi-cairo \
-        python3-musicbrainzngs \
-        python3-mutagen \
-        python3-mypy \
         python3-pip \
-        python3-polib \
-        python3-pyinotify \
-        python3-pytest \
-        python3-setuptools \
+        sudo \
         xvfb
 
-RUN python3 -m pip install --user --upgrade \
-        xvfbwrapper \
-        pytest-faulthandler \
-        flake8
+RUN pip3 install poetry
 
 # Create user (required for write access tests in 'tests/test_formats__audio.py' to pass)
 ARG HOST_USER_ID=5555

@@ -1,0 +1,6 @@
+# action.yml
+name: Debian 11
+description: Run tests for Debian 11
+runs:
+  using: docker
+  image: Dockerfile
